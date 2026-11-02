@@ -17,7 +17,7 @@ const EditStudents = () => {
     department: "",
     semester: "",
     status: "",
-  };
+  }; 
 
   const { studentId } = useParams();
   const navigate = useNavigate();

@@ -1,90 +1,90 @@
-# Student Record Management System
+# Student Management Frontend
 
-A full-stack student management application built with React on the frontend and Express.js + MongoDB on the backend. It helps manage student records with add, view, update, and delete functionality.
+This is the React frontend for the Student Record Management System. It provides a modern, responsive interface to manage student records, including adding, viewing, editing, and deleting student information.
 
 ## Features
 
+- Student dashboard with a table layout
 - Add new student records
-- Display student details in a dashboard
-- Edit and update existing records
-- Delete student records with confirmation
-- Store data in MongoDB
-- Responsive UI built with Bootstrap
+- View detailed student information
+- Edit existing student profiles
+- Delete records with confirmation
+- Search and data management workflow
+- Bootstrap-based responsive UI
+- Integration with backend REST APIs
 
 ## Tech Stack
 
-- Frontend: React.js, React Router, Bootstrap, Axios
-- Backend: Node.js, Express.js, MongoDB, Mongoose
+- React.js
+- React Router
+- Bootstrap 5
+- Axios
+- SweetAlert2
+- JavaScript
 
 ## Project Structure
 
 ```text
-Student Record Management System/
-├── backend_side/
-│   ├── config/
-│   ├── controller/
-│   ├── models/
-│   ├── routes/
-│   ├── .env
-│   ├── app.js
-│   └── package.json
-├── student_management/
-│   ├── src/
-│   ├── public/
-│   └── package.json
-├── README.md
-└── .gitignore
+student_management/
+├── public/
+├── src/
+│   ├── App.jsx
+│   ├── Home.jsx
+│   ├── AddStudents.jsx
+│   ├── EditStudents.jsx
+│   ├── NavHeader.jsx
+│   ├── index.js
+│   └── App.css
+├── package.json
+├── package-lock.json
+└── README.md
 ```
 
-## Setup Instructions
+## Prerequisites
 
-### 1. Install backend dependencies
+- Node.js 18+
+- npm
+- Backend server running at `http://localhost:5000`
+
+## Setup and Run
+
+1. Install dependencies:
 
 ```bash
-cd backend_side
+cd student_management
 npm install
 ```
 
-Create a `.env` file in `backend_side` with:
-
-```env
-PORT=5000
-MONGO_URI=mongodb://localhost:27017/student_record
-```
-
-Start the backend:
-
-```bash
-npm run dev
-```
-
-### 2. Install frontend dependencies
-
-```bash
-cd ../student_management
-npm install
-```
-
-Start the frontend:
+2. Start the frontend development server:
 
 ```bash
 npm start
 ```
 
-The frontend runs at `http://localhost:3000` and the backend runs at `http://localhost:5000`.
+3. Open the application in the browser:
 
-## API Overview
+```text
+http://localhost:3000
+```
 
-Base URL: `http://localhost:5000/api/students`
+## Backend Connection
 
-- `GET /api/students` — Get all students
-- `POST /api/students` — Add a student
-- `GET /api/students/:studentId` — Get one student
-- `PUT /api/students/:studentId` — Update a student
-- `DELETE /api/students/:studentId` — Delete a student
+The frontend communicates with the backend using Axios and expects:
+
+```text
+http://localhost:5000/api/students
+```
+
+Make sure the backend service is running before using the app.
+
+## Main Pages
+
+- `/` — All students dashboard
+- `/addStudents` — Add a new student
+- `/editStudents/:studentId` — Update student details
 
 ## Notes
 
-- Make sure MongoDB is running before starting the backend.
-- This project is suitable for student administration and academic record tracking.
+- The frontend depends on the backend API for all CRUD operations.
+- If MongoDB or the backend service is unavailable, the UI will not be able to fetch or save student records.
 
